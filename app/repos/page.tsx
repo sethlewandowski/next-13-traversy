@@ -12,17 +12,15 @@ export default async function ReposPage() {
 	return (
 		<>
 			<h1>Repositories</h1>
-			<section>
-				{repos.length > 0 &&
-					repos?.map((repo: any) => (
-						<div key={repo.id}>
-							<Link href={`code/repos/${repo.name}`}>
-								<h2 key={repo.name}>{repo.name}</h2>
-								<p>Link: {repo.html_url}</p>
-							</Link>
-						</div>
-					))}
-			</section>
+			{repos.length > 0 &&
+				repos?.map((repo: any) => (
+					<div key={repo.id}>
+						<Link href={`code/repos/${repo.name}`}>
+							<h2 key={repo.name}>{repo.name}</h2>
+							<p>Link: {repo.html_url}</p>
+						</Link>
+					</div>
+				))}
 		</>
 	);
 }
